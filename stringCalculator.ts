@@ -1,3 +1,4 @@
+
 class StringCalculator {
     add(numbers: string) {
         if(numbers == "")

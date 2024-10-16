@@ -2,6 +2,7 @@ import StringCalculator from './stringCalculator';
 
 describe('StringCalculator', () => {
     let stringCalculator: StringCalculator;
+    
     beforeEach(() => {
         stringCalculator = new StringCalculator();
     });
