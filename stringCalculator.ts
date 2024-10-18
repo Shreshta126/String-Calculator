@@ -9,7 +9,10 @@ class StringCalculator {
         let totalSum = 0;
         
         for(const num of splitNumbers){
-            totalSum+= Number(num);
+            const numArr = num.split('\n');
+            for(const n of numArr){
+                totalSum+= Number(n);
+            }
         }
         return totalSum;
     }

@@ -12,6 +12,6 @@ describe('StringCalculator', () => {
     });
 
     test('should return the sum of numbers in string without delimiters', () => {
-        expect(stringCalculator.add("1,12")).toBe(13);
+        expect(stringCalculator.add("1\n2,3\n4\n5,6")).toBe(21);
     });
 });
