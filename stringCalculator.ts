@@ -5,14 +5,10 @@ class StringCalculator {
             return 0;
         }
 
-        var splitNumbers = numbers.split(","); 
+        let splitNumbers = numbers.split(/\n|,/); 
         let totalSum = 0;
-        
         for(const num of splitNumbers){
-            const numArr = num.split('\n');
-            for(const n of numArr){
-                totalSum+= Number(n);
-            }
+            totalSum+= Number(num);
         }
         return totalSum;
     }
