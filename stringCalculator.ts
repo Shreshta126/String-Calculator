@@ -4,19 +4,20 @@ class StringCalculator {
         if(numbers == ""){
             return 0;
         }
-        let numString = "";
-        let delimiter:any;
+        let delimiterNumString = "";
+        let delimiterRgx:any;
         if(numbers.substring(0,2)=="//")
         {
             const split = numbers.split('\n', 2);
-            numString = split[1];
-            delimiter = new RegExp(split[0].substring(2));
+            delimiterNumString = split[1];
+            let delimiterArr = split[0].substring(2).split(/\[|\]/);
+            delimiterArr = delimiterArr.filter(item => item !== "");
+            delimiterRgx = new RegExp(delimiterArr.join('|'));
         }
         let splitNumbers:any; 
 
-        if(delimiter)
-        {
-            splitNumbers = numString.split(delimiter);
+        if(delimiterRgx){
+            splitNumbers = delimiterNumString.split(delimiterRgx);
         }else{
             splitNumbers = numbers.split(/\n|,/); 
         }
