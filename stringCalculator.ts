@@ -1,4 +1,3 @@
-
 class StringCalculator {
     add(numbers: string) {
         if(numbers == ""){
@@ -23,8 +22,17 @@ class StringCalculator {
         }
         
         let totalSum = 0;
+        const negetiveNumbers:number[] = [];
         for(const num of splitNumbers){
-            totalSum+= Number(num);
+            const intNumber = Number(num);
+            if(intNumber<0)
+            {
+               negetiveNumbers.push(intNumber);
+            }
+            totalSum+= intNumber;
+        }
+        if(negetiveNumbers.length>0){
+            throw new Error("Negetive numbers not allowed "+ negetiveNumbers.join(","));
         }
         return totalSum;
     }

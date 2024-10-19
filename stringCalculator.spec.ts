@@ -34,4 +34,8 @@ describe('StringCalculator', () => {
     test('should return the sum of numbers in string with all repeated delimiters', () => {
         expect(stringCalculator.add("//[;;][%%][::]\n1;;2%%3%%4;;5;;6")).toBe(21);
     });
+
+    test('should throw an exception when negetive numbers are present', () => {
+        expect(() => stringCalculator.add("//[;;][%%][::]\n1;;-2%%-3%%-4;;5;;6")).toThrow('Negetive numbers not allowed -2,-3');
+    });
 });
